@@ -67,7 +67,7 @@ for( ; node.length > 0; node = bst.searchAfter(node[0].key) ) {
 
 You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
 
-### Finding the nearest key to a given key which may or may not be in the tree.
+### Finding the nearest key to a given key which may or may not be in the tree
 
 You can use `searchNearest` to find the key and data nearest to the specified key.
 

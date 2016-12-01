@@ -14,11 +14,11 @@
     "url": "git@github.com:andredigenova/node-binary-search-tree-continued.git"
   },
   "dependencies": {
-    "underscore": "~1.4.4"
   },
   "devDependencies": {
     "chai": "1.0.x",
-    "mocha": "1.4.x"
+    "mocha": "1.4.x",
+    "underscore": "~1.4.4"
   },
   "scripts": {
     "test": "make test"

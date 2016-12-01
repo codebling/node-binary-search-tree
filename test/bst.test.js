@@ -464,6 +464,27 @@ describe('Binary search tree', function () {
       }
     });
 
+    it('Can find nearest key in a BST', function () {
+      var bst = new BinarySearchTree();
+      [10, 5, 15, 3, 8, 13, 18].forEach(function (k) {
+        bst.insert(k, 'data ' + k);
+      });
+
+      bst.checkIsBST();
+
+      var search = bst.searchNearest(6)
+      assert.deepEqual(search.key, 5)
+      assert.deepEqual(search.data[0], 'data 5')
+
+      search = bst.searchNearest(20)
+      assert.deepEqual(search.key, 18)
+      assert.deepEqual(search.data[0], 'data 18')
+
+      search = bst.searchNearest(-50)
+      assert.deepEqual(search.key, 3)
+      assert.deepEqual(search.data[0], 'data 3')
+    });
+
     it('Can search for data between two bounds', function () {
       var bst = new BinarySearchTree();
 

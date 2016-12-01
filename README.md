@@ -52,7 +52,7 @@ bst.delete(18, 'world');   // bst.search(18) will now give ['hello']
 
 There are three optional parameters you can pass the BST constructor, allowing you to enforce a key-uniqueness constraint, use a custom function to compare keys and use a custom function to check whether values are equal. These parameters are all passed in an object.
 
-### Browsing throuhg all keys in the tree
+### Browsing through all keys in the tree
 
 You can use `searchAfter` and `searchBefore` to browse through all keys in the tree, like this:
 
@@ -63,6 +63,23 @@ for( ; node.length > 0; node = bst.searchAfter(node[0].key) ) {
   // do something with each node here
   // node is now an array of values, as with search()
 }
+```
+
+### Finding the nearest key to a given key which may or may not be in the tree.
+
+You can use `searchNearest` to find the key and data nearest to the specified key.
+
+```javascript
+// Creating a binary search tree
+var bst = new BinarySearchTree();
+
+// Inserting some data
+bst.insert(15, 'some data for key 15');
+bst.insert(12, 'something else');
+bst.insert(18, 'hello');
+
+bst.searchNearest(20); // Equal to {key: 18, data: ['hello']}
+bst.searchNearest(13); // Equal to {key: 12, data: ['something else']}
 ```
 
 You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
@@ -79,16 +96,12 @@ bst.insert(10, 'world');   // Will throw an error
 
 ```javascript
 // Custom key comparison function
-// It needs to return a negative number if a is less than b,
-// a positive number if a is greater than b
-// and 0 if they are equal
+// It needs to return the distance between the keys. Negative if
+// a < b and positive if a > b
 // If none is provided, the default one can compare numbers, dates and strings
 // which are the most common usecases
 function compareKeys (a, b) {
-  if (a.age < b.age) { return -1; }
-  if (a.age > b.age) { return 1; }
-  
-  return 0;
+  return a.age - b.age;
 }
 
 // Now we can use objects with an 'age' property as keys

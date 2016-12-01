@@ -2,14 +2,14 @@
 
 **This is a fork of <a href="https://github.com/louischatriot" target="_blank">@louischatriot's</a> project with the intent to grow the project and add new features.**
 
-Two implementations of binary search tree: <a href="http://en.wikipedia.org/wiki/Binary_search_tree" target="_blank">basic</a> and <a href="http://en.wikipedia.org/wiki/AVL_tree" target="_blank">AVL</a> (a kind of self-balancing binmary search tree).
+Two implementations of binary search tree: <a href="http://en.wikipedia.org/wiki/Binary_search_tree" target="_blank">basic</a> and <a href="http://en.wikipedia.org/wiki/AVL_tree" target="_blank">AVL</a> (a kind of self-balancing binary search tree).
 
 
 ## Installation and tests
-Package name is `binary-search-tree`.
+Package name is `binary-search-tree-continued`.
 
 ```bash
-npm install binary-search-tree --save
+npm install binary-search-tree-continued --save
 
 make test
 ```
@@ -65,6 +65,8 @@ for( ; node.length > 0; node = bst.searchAfter(node[0].key) ) {
 }
 ```
 
+You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
+
 ### Finding the nearest key to a given key which may or may not be in the tree.
 
 You can use `searchNearest` to find the key and data nearest to the specified key.
@@ -81,8 +83,6 @@ bst.insert(18, 'hello');
 bst.searchNearest(20); // Equal to {key: 18, data: ['hello']}
 bst.searchNearest(13); // Equal to {key: 12, data: ['something else']}
 ```
-
-You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
 
 ### Uniqueness
 

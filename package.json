@@ -1,6 +1,6 @@
 {
   "name": "binary-search-tree-continued",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Different binary search tree implementations, including a self-balancing one (AVL)",
   "keywords": [
     "AVL tree",

@@ -80,8 +80,8 @@ bst.insert(15, 'some data for key 15');
 bst.insert(12, 'something else');
 bst.insert(18, 'hello');
 
-bst.searchNearest(20); // Equal to {key: 18, data: ['hello']}
-bst.searchNearest(13); // Equal to {key: 12, data: ['something else']}
+bst.searchNearest(20); // Equal to ['hello']
+bst.searchNearest(13); // Equal to ['something else']
 ```
 
 ### Uniqueness

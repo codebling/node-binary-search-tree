@@ -473,16 +473,13 @@ describe('Binary search tree', function () {
       bst.checkIsBST();
 
       var search = bst.searchNearest(6)
-      assert.deepEqual(search.key, 5)
-      assert.deepEqual(search.data[0], 'data 5')
+      assert.deepEqual(search[0], 'data 5')
 
       search = bst.searchNearest(20)
-      assert.deepEqual(search.key, 18)
-      assert.deepEqual(search.data[0], 'data 18')
+      assert.deepEqual(search[0], 'data 18')
 
       search = bst.searchNearest(-50)
-      assert.deepEqual(search.key, 3)
-      assert.deepEqual(search.data[0], 'data 3')
+      assert.deepEqual(search[0], 'data 3')
     });
 
     it('Can find nearest key greater than search key in a BST', function () {
@@ -494,23 +491,19 @@ describe('Binary search tree', function () {
       bst.checkIsBST();
 
       var search = bst.searchNearestGte(19)
-      assert.deepEqual(search.key, 100)
-      assert.deepEqual(search.data[0], 'data 100')
+      assert.deepEqual(search[0], 'data 100')
 
       search = bst.searchNearestGte(101)
       assert.isNull(search)
 
       search = bst.searchNearestGte(7)
-      assert.deepEqual(search.key, 8)
-      assert.deepEqual(search.data[0], 'data 8')
+      assert.deepEqual(search[0], 'data 8')
 
       search = bst.searchNearestGte(6)
-      assert.deepEqual(search.key, 8)
-      assert.deepEqual(search.data[0], 'data 8')
+      assert.deepEqual(search[0], 'data 8')
 
       search = bst.searchNearestGte(-10)
-      assert.deepEqual(search.key, 3)
-      assert.deepEqual(search.data[0], 'data 3')
+      assert.deepEqual(search[0], 'data 3')
     });
 
     it('Can find nearest key less than search key in a BST', function () {
@@ -522,23 +515,31 @@ describe('Binary search tree', function () {
       bst.checkIsBST();
 
       var search = bst.searchNearestLte(99)
-      assert.deepEqual(search.key, 18)
-      assert.deepEqual(search.data[0], 'data 18')
+      assert.deepEqual(search[0], 'data 18')
 
       search = bst.searchNearestLte(0)
       assert.isNull(search)
 
       search = bst.searchNearestLte(7)
-      assert.deepEqual(search.key, 5)
-      assert.deepEqual(search.data[0], 'data 5')
+      assert.deepEqual(search[0], 'data 5')
 
       search = bst.searchNearestLte(6)
-      assert.deepEqual(search.key, 5)
-      assert.deepEqual(search.data[0], 'data 5')
+      assert.deepEqual(search[0], 'data 5')
 
       search = bst.searchNearestLte(100000)
-      assert.deepEqual(search.key, 100)
-      assert.deepEqual(search.data[0], 'data 100')
+      assert.deepEqual(search[0], 'data 100')
+    });
+
+    it('Can find nearest key with two equal keys in BST', function () {
+      var bst = new BinarySearchTree();
+      [10, 5, 15, 3, 8, 8, 13, 18, 100].forEach(function (k) {
+        bst.insert(k, 'data ' + k);
+      });
+
+      bst.checkIsBST();
+
+      var search = bst.searchNearestLte(8)
+      assert.deepEqual(search, ['data 8', 'data 8'])
     });
 
     it('Can search for data between two bounds', function () {

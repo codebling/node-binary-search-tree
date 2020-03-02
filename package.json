@@ -1,6 +1,10 @@
 {
-  "name": "binary-search-tree-continued",
-  "version": "0.0.5",
+  "name": "binary-search-tree",
+  "version": "0.2.6",
+  "author": {
+    "name": "Louis Chatriot",
+    "email": "louis.chatriot@gmail.com"
+  },
   "description": "Different binary search tree implementations, including a self-balancing one (AVL)",
   "keywords": [
     "AVL tree",
@@ -8,10 +12,10 @@
     "self-balancing",
     "AVL tree"
   ],
-  "homepage": "https://github.com/andredigenova/node-binary-search-tree-continued",
+  "homepage": "https://github.com/louischatriot/node-binary-search-tree",
   "repository": {
     "type": "git",
-    "url": "git@github.com:andredigenova/node-binary-search-tree-continued.git"
+    "url": "git@github.com:louischatriot/node-binary-search-tree.git"
   },
   "dependencies": {
   },

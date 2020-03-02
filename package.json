@@ -24,7 +24,7 @@
     "underscore": "^1.9.2"
   },
   "scripts": {
-    "test": "make test"
+    "test": "./node_modules/.bin/mocha --timeout 10000 --reporter spec"
   },
   "main": "index",
   "license": "MIT"

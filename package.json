@@ -12,10 +12,10 @@
     "self-balancing",
     "AVL tree"
   ],
-  "homepage": "https://github.com/louischatriot/node-binary-search-tree",
+  "homepage": "https://github.com/codebling/node-binary-search-tree",
   "repository": {
     "type": "git",
-    "url": "git@github.com:louischatriot/node-binary-search-tree.git"
+    "url": "https://github.com/codebling/node-binary-search-tree.git"
   },
   "dependencies": {
   },

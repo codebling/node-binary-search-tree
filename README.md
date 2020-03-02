@@ -6,10 +6,10 @@ Two implementations of binary search tree: <a href="http://en.wikipedia.org/wiki
 
 
 ## Installation and tests
-Package name is `binary-search-tree-continued`.
+Package name is `binary-search-tree`.
 
 ```bash
-npm install binary-search-tree-continued --save
+npm install binary-search-tree --save
 
 make test
 ```
@@ -65,9 +65,7 @@ for( ; node.length > 0; node = bst.searchAfter(node[0].key) ) {
 }
 ```
 
-You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
-
-### Finding the nearest key to a given key which may or may not be in the tree
+### Finding the nearest key to a given key which may or may not be in the tree.
 
 You can use `searchNearest` to find the key and data nearest to the specified key.
 
@@ -83,6 +81,8 @@ bst.insert(18, 'hello');
 bst.searchNearest(20); // Equal to ['hello']
 bst.searchNearest(13); // Equal to ['something else']
 ```
+
+You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
 
 ### Uniqueness
 

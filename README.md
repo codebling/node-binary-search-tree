@@ -1,18 +1,18 @@
 # Binary search trees for Node.js
 
-**Note: this module is not actively maintained bar for bug fixes. Its primary use is within NeDB and I do not plan on adding any new features.**
+Two implementations of binary search tree: [basic](http://en.wikipedia.org/wiki/Binary_search_tree) and [AVL](http://en.wikipedia.org/wiki/AVL_tree) (a kind of self-balancing binary search tree). 
 
-Two implementations of binary search tree: <a href="http://en.wikipedia.org/wiki/Binary_search_tree" target="_blank">basic</a> and <a href="http://en.wikipedia.org/wiki/AVL_tree" target="_blank">AVL</a> (a kind of self-balancing binmary search tree). I wrote this module primarily to store indexes for <a href="https://github.com/louischatriot/nedb" target="_blank">NeDB</a> (a javascript dependency-less database).
-
-
-## Installation and tests
-Package name is `binary-search-tree-continued`.
+## Installation
 
 ```bash
-npm install binary-search-tree-continued --save
-
-make test
+npm i @codebling/binary-search-tree
 ```
+
+## Test
+
+```bash
+npm 
+```test
 
 ## Usage
 The API mainly provides 3 functions: `insert`, `search` and `delete`. If you do not create a unique-type binary search tree, you can store multiple pieces of data for the same key. Doing so with a unique-type BST will result in an error being thrown. Data is always returned as an array, and you can delete all data relating to a given key, or just one piece of data.
@@ -20,8 +20,8 @@ The API mainly provides 3 functions: `insert`, `search` and `delete`. If you do 
 Values inserted can be anything except `undefined`.
 
 ```javascript
-var BinarySearchTree = require('binary-search-tree-continued').BinarySearchTree
-  , AVLTree = require('binary-search-tree-continued').AVLTree   // Same API as BinarySearchTree
+var BinarySearchTree = require('binary-search-tree').BinarySearchTree
+  , AVLTree = require('binary-search-tree').AVLTree   // Same API as BinarySearchTree
 
 // Creating a binary search tree
 var bst = new BinarySearchTree();
@@ -65,9 +65,7 @@ for( ; node.length > 0; node = bst.searchAfter(node[0].key) ) {
 }
 ```
 
-You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
-
-### Finding the nearest key to a given key which may or may not be in the tree
+### Finding the nearest key to a given key which may or may not be in the tree.
 
 You can use `searchNearest` to find the key and data nearest to the specified key.
 
@@ -83,6 +81,8 @@ bst.insert(18, 'hello');
 bst.searchNearest(20); // Equal to ['hello']
 bst.searchNearest(13); // Equal to ['something else']
 ```
+
+You can use `getMinKey` and `getMaxKey` to get started from the beginning or the end, or you can also use any other key value as a starting point.
 
 ### Uniqueness
 
